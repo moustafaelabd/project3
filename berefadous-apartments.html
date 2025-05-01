@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الوحدات المتاحة</title>
+  <link rel="stylesheet" href="index.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+      background-color: #e9e9e9;
+    }
+    .search-box {
+      background: #fff;
+      color: rgb(86, 86, 86);
+      padding: 25px;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 1100px;
+      box-shadow: 0px 21px 43px 0px #0404001A;
+    }
+    .form-label {
+      color: rgb(86, 86, 86);
+      font-weight: bold;
+    }
+    .btn-gold {
+      background-color:rgb(200, 32, 33);
+      color: #fff;
+      font-weight: bold;
+    }
+    .btn-gold:hover {
+      background-color: #28a745;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: flex-start;
+      padding: 1rem 0;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      flex: 0 1 calc(33.333% - 16px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s ease-in-out;
+      min-height: 320px;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+      background-color: #f9f9f9;
+      text-align: right;
+    }
+    .card-content h3 {
+      color: #c02021;
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
+    }
+    .card-content p {
+      margin: 0.3rem 0;
+      color: #333;
+      font-size: 0.95rem;
+    }
+    .card-content span.icon {
+      color: #c02021;
+      margin-left: 6px;
+    }
+    .card-content .highlight {
+      color: #c02021;
+      font-weight: bold;
+    }
+    .card-content button {
+      background-color: #c02021;
+      color: #fff;
+      border: none;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      margin-top: 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card-content button:hover {
+      background-color: #a0181a;
+    }
+    @media (max-width: 992px) {
+      .card {
+        flex: 0 1 calc(48% - 12px);
+      }
+    }
+    @media (max-width: 600px) {
+      .card {
+        flex: 0 1 100%;
+      }
+    }
+    .pagination-controls {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .pagination-controls button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #c02021;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .pagination-controls button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+    header {
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8); /* شفافية أخف لأناقة أكثر */
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    backdrop-filter: blur(8px); /* ضبابية أنعم */
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* ظل خفيف تحت الهيدر */
+}
+
+/* اللوجو */
+.logo img {
+  margin-right: 800px;
+    width: 60px; /* أصغر شوي لتوازن مع العناصر */
+}
+
+/* المينيو */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin-left: 25px;
+    position: relative; /* تفعيل الـ positioning لجعل ::after يعمل بشكل صحيح */
+}
+
+.navbar li a {
+    color: #000;
+    text-decoration: none; /* إزالة الخط الافتراضي */
+    font-size: 18px;
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-right: 800px;
+}
+
+/* الخط تحت الرابط باستخدام ::after */
+@media (max-width: 992px) {
+  .card {
+    flex: 0 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 1 100%;
+  }
+}
+@media (max-width: 992px) {
+  .card {
+    flex: 0 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 1 100%;
+  }
+}
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .logo img{
+      margin-left: 15px;
+    }
+    .navbar {
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .login-btn {
+        margin: 15px auto;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+        overflow-x: hidden;
+    }
+    .hero-content p {
+        font-size: 20px;
+    }
+    .cta-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+} 
+
+/* عند التمرير على الرابط */
+.navbar li a:hover {
+  color: #a0181a;
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-weight: 600;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    margin-left: 140px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.login-btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+/* ايقونة موبايل */
+.menu-icon {
+    display: none;
+    font-size: 32px;
+    color: #333;
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- زر العودة إلى الأعلى -->
+<button id="backToTop" 
+style="display: none; position: fixed; bottom: 20px; left: 20px; font-size: 24px; cursor: pointer;">
+🔝
+</button>
+
+<!-- أيقونة الملف الشخصي -->
+<img id="profileIcon" 
+src="img/Sample_User_Icon.png" 
+alt="بروفايل" 
+class="profile-icon" 
+title="تسجيل الخروج"
+onclick="window.location.href='profile.html'" 
+style="width: 40px; height: 40px; position: fixed; top: 20px; right: 20px; cursor: pointer;">
+
+       <ul class="navbar">
+        <li><a href="index.html">الرئيسية</a></li>
+    <div class="logo"><img src="img/تنزيل__8_-removebg-preview.png" alt=""></div>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+<div class="container">
+  <div class="search-box">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">النوع</label>
+        <select id="typeSelect" class="form-select">
+          <option value="الكل">الكل</option>
+          <option value="شقة">شقة</option>
+          <option value="فيلا">فيلا</option>
+          <option value="مرفق تجاري">مرفق تجاري</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">المساحة القصوى: <span id="areaValue">731</span> م²</label>
+        <input type="range" class="form-range" id="areaRange" min="112" max="731" value="731" oninput="document.getElementById('areaValue').textContent = this.value">
+        <div class="d-flex justify-content-between small">
+          <span>112</span>
+          <span>731</span>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4 text-center">
+      <button class="btn btn-gold px-5" onclick="searchUnits()">بحث</button>
+    </div>
+  </div>
+
+  <div class="my-5">
+    <h2 class="text-center mb-4">نتائج البحث</h2>
+    <div id="results"></div>
+    <div id="pagination" class="pagination-controls"></div>
+  </div>
+</div>
+<div id="pagination" class="pagination-controls"></div>
+<script src="auth.js"></script>
+
+<script>
+// بيانات الشقق
+const apartments = [
+  {
+    title: "عمارة نموذج E",
+    type: "شقة",
+    area: 149,
+    price: "التسليم في ٥ سنوات",
+    image: "img/21f27dc9-b98d-48b8-b4a6-f607ec67c9fc.jfif"
+  },
+  {
+    title: "عمارة نموذج E",
+    type: "شقة",
+    area: 200,
+    price: "التسليم في ٥ سنوات",
+    image: "img/21f27dc9-b98d-48b8-b4a6-f607ec67c9fc.jfif"
+  },
+  {
+    title: "عمارة نموذج E",
+    type: "شقة",
+    area: 116,
+    price: "التسليم في ٥ سنوات",
+    image: "img/21f27dc9-b98d-48b8-b4a6-f607ec67c9fc.jfif"
+  },
+  {
+    title: "عمارة نموذج E",
+    type: "شقة",
+    area: 142,
+    price: "التسليم في ٥ سنوات",
+    image: "img/21f27dc9-b98d-48b8-b4a6-f607ec67c9fc.jfif"
+  },
+  {
+    title: "عمارة نموذج E",
+    type: "شقة",
+    area: 136,
+    price: "التسليم في ٥ سنوات",
+    image: "img/21f27dc9-b98d-48b8-b4a6-f607ec67c9fc.jfif"
+  },
+  {
+    title: "عمارة نموذج E",
+    type: "شقة",
+    area: 115,
+    price: "التسليم في ٥ سنوات",
+    image: "img/21f27dc9-b98d-48b8-b4a6-f607ec67c9fc.jfif"
+  },
+  // أضف المزيد من الشقق هنا...
+];
+
+// بيانات الفلل
+const villas = [
+  {
+    title: "شاليه نموذج B1",
+    type: "فيلا",
+    area: 200,
+    price: "التسليم في ٥ سنوات",
+    image: "img/266cd406-0d3f-4b71-9143-d1940cf66b58.jfif"
+  },
+  {
+    title: "شاليه نموذج B1",
+    type: "فيلا",
+    area: 250,
+    price: "التسليم في ٥ سنوات",
+    image: "img/266cd406-0d3f-4b71-9143-d1940cf66b58.jfif"
+  },
+  {
+    title: "شاليه نموذج B1",
+    type: "فيلا",
+    area: 300,
+    price: "التسليم في ٥ سنوات",
+    image: "img/266cd406-0d3f-4b71-9143-d1940cf66b58.jfif"
+  },
+  {
+    title: "شاليه نموذج B1",
+    type: "فيلا",
+    area: 330,
+    price: "التسليم في ٥ سنوات",
+    image: "img/266cd406-0d3f-4b71-9143-d1940cf66b58.jfif"
+  },
+  {
+    title: "شاليه نموذج B1",
+    type: "فيلا",
+    area: 350,
+    price: "التسليم في ٥ سنوات",
+    image: "img/266cd406-0d3f-4b71-9143-d1940cf66b58.jfif"
+  },
+  // أضف المزيد من الفلل هنا...
+];
+
+// بيانات المرافق
+const commercials = [
+  {
+    title: "المرافق التجارية ",
+    type: "مرفق تجاري",
+    area: 200,
+    price: "التسليم في ٥ سنوات",
+    image: "img/3d40c48d-a0ea-465e-8113-e5574f801ed7.jfif"
+  },
+  {
+    title: "المرافق التجارية ",
+    type: "مرفق تجاري",
+    area: 180,
+    price: "التسليم في ٥ سنوات",
+    image: "img/3d40c48d-a0ea-465e-8113-e5574f801ed7.jfif"
+  },
+  // أضف المزيد من المرافق هنا...
+];
+
+// دمج البيانات كلها
+const units = [...apartments, ...villas, ...commercials];
+
+
+let filtered = units;
+let currentPage = 1;
+const itemsPerPage = 24;
+
+function renderPage(units) {
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const pageItems = units.slice(start, end);
+
+  if (pageItems.length === 0) {
+    resultsDiv.innerHTML = "<p class='text-center text-danger'>لا توجد نتائج مطابقة.</p>";
+    return;
+  }
+
+  const cardsContainer = document.createElement('div');
+  cardsContainer.className = 'cards';
+
+  pageItems.forEach(unit => {
+    const cardHTML = `
+      <div class="card">
+        <img src="${unit.image}" alt="${unit.title}">
+        <div class="card-content">
+          <h3>${unit.title}</h3>
+          <p><span class="icon"><i class="fas fa-layer-group"></i></span> النوع: ${unit.type}</p>
+          <p><span class="icon"><i class="fas fa-ruler-combined"></i></span> المساحة: ${unit.area} م²</p>
+          <p><span class="icon"></span> <span class="highlight">${unit.price} </span></p>
+        </div>
+      </div>
+    `;
+    cardsContainer.innerHTML += cardHTML;
+  });
+
+  resultsDiv.appendChild(cardsContainer);
+  renderPagination(units.length);
+}
+
+function renderPagination(totalItems) {
+  const paginationDiv = document.getElementById("pagination");
+  paginationDiv.innerHTML = "";
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  if (totalPages <= 1) return;
+
+  const navWrapper = document.createElement("div");
+  navWrapper.className = "d-flex justify-content-center align-items-center gap-2 flex-wrap";
+
+  // زر السابق
+  const prevButton = document.createElement("button");
+  prevButton.textContent = "السابق";
+  prevButton.disabled = currentPage === 1;
+  prevButton.className = "btn";
+  prevButton.style.backgroundColor = currentPage === 1 ? "#aaa" : "#c02021";
+  prevButton.style.color = "white";
+  prevButton.style.borderRadius = "8px";
+  prevButton.style.padding = "10px 20px";
+  prevButton.onclick = () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(filtered);
+    }
+  };
+  navWrapper.appendChild(prevButton);
+
+  // نص: صفحة x من y
+  const pageInfo = document.createElement("span");
+  pageInfo.textContent = `صفحة ${currentPage} من ${totalPages}`;
+  pageInfo.style.fontWeight = "bold";
+  pageInfo.style.color = "#c02021";
+  navWrapper.appendChild(pageInfo);
+
+  // زر التالي
+  const nextButton = document.createElement("button");
+  nextButton.textContent = "التالي";
+  nextButton.disabled = currentPage === totalPages;
+  nextButton.className = "btn";
+  nextButton.style.backgroundColor = currentPage === totalPages ? "#aaa" : "#c02021";
+  nextButton.style.color = "white";
+  nextButton.style.borderRadius = "8px";
+  nextButton.style.padding = "10px 20px";
+  nextButton.onclick = () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage(filtered);
+    }
+  };
+  navWrapper.appendChild(nextButton);
+
+  paginationDiv.appendChild(navWrapper);
+}
+
+
+function searchUnits() {
+  const type = document.getElementById("typeSelect").value;
+  const maxArea = parseInt(document.getElementById("areaRange").value);
+
+  filtered = units.filter(unit => {
+    return (type === "الكل" || unit.type === type) && unit.area <= maxArea;
+  });
+
+  currentPage = 1;
+  renderPage(filtered);
+}
+
+window.onload = searchUnits;
+</script>
+</body>
+</html>

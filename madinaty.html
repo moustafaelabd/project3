@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مدينتي - التفاصيل</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Noto+Sans+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      margin: 0;
+      font-family: "Noto Kufi Arabic", sans-serif;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 12px;
+      height: 400px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #222;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #ffc400;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .hero-image {
+        height: 250px;
+      }
+    }
+    /* الهواتف المحمولة - شاشات أقل من 768 بكسل */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .facilities-title {
+    font-size: 22px;
+  }
+
+  .slider-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider-btn {
+    display: none; /* إخفاء أزرار السلايدر على الموبايل إن لزم */
+  }
+
+  .slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding-bottom: 15px;
+  }
+
+  .facility-card {
+    min-width: 250px;
+    scroll-snap-align: center;
+  }
+
+  .facility-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .overlay {
+    padding: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-box {
+    flex: 1 1 100%;
+  }
+
+  .profile-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  input[type="file"], input[type="text"] {
+    font-size: 14px;
+  }
+}
+
+/* التابلت - شاشات من 769 إلى 1024 بكسل */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slider {
+    gap: 15px;
+  }
+
+  .facility-card {
+    width: 300px;
+  }
+
+  .profile-card {
+    width: 80%;
+  }
+
+  .footer-container {
+    gap: 40px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="img/Madinaty-gate-scaled.jpg" alt="مدينتي" class="hero-image">
+    
+    <h1>مدينتي – القاهرة الجديدة</h1>
+    
+    <div class="description">
+      <p><strong>مدينة عالمية على أرض مصرية</strong></p>
+      <p>مدينة اشترك في تصميمها ثلاث من كبرى الشركات الأمريكية المتخصصة في تصميم المدن الجديدة وهي HHCP وSWA وSASAKI حيث تم تصميم مدينة عصرية روعي فيها تلبية الاحتياجات الحالية والمستقبلية للسكان.</p>
+      <p>مدينتي تحتوي على ڤيلات، عمارات، مساحات خضراء، ملاعب جولف، مناطق ترفيهية، ومراكز تجارية، تعليمية وطبية عالمية، بالإضافة إلى خدمات جماهيرية وحكومية.</p>
+      <p>تمتد المدينة على مساحة ٨ آلاف فدان وتستوعب حوالي ٧٠٠٫٠٠٠ نسمة في ١٢٠ ألف وحدة سكنية وتعد امتدادًا حضاريًا للقاهرة الجديدة.</p>
+    </div>
+
+    <h2 style="margin-bottom: 15px;">صور من مدينتي</h2>
+    <div class="gallery">
+      <img src="img/3.jpg" alt="صورة من مدينتي">
+      <img src="img/17.jpg" alt="صورة من مدينتي">
+      <img src="img/21.jpg" alt="صورة من مدينتي">
+      <img src="img/businessServicesSection.jpg" alt="صورة من مدينتي">
+      <img src="img/sportsAndSocialServicesSection.jpg" alt="صورة من مدينتي">
+      <img src="img/4.jpg" alt="صورة من مدينتي">
+      <img src="img/5.webp" alt="صورة من مدينتي">
+      <img src="img/6.jpg" alt="صورة من مدينتي">
+    </div>
+
+    <a href="index.html#slider" class="back-button">العودة إلى الصفحة الرئيسية</a>
+  </div>
+  <footer style="background-color: #1e1e1e; color: #f1f1f1; padding: 40px 20px; font-family: 'Tajawal', sans-serif;">
+    <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+      
+      <div style="flex: 1 1 250px;">
+        <h3 style="color: #ffc400;">عن الموقع</h3>
+        <p style="line-height: 1.8;">منصة عقارية لعرض مشروعات طلعت مصطفى مثل مدينتي ونور بسيليا وغيرها، بمعلومات وصور وتفاصيل شاملة.</p>
+      </div>
+  
+      <div style="flex: 1 1 200px;">
+        <h3 style="color: #ffc400;">روابط سريعة</h3>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li><a href="index.html" style="color: #f1f1f1; text-decoration: none;">الرئيسية</a></li>
+          <li><a href="#facilities" style="color: #f1f1f1; text-decoration: none;">المنشآت</a></li>
+          <li><a href="contact.html" style="color: #f1f1f1; text-decoration: none;">اتصل بنا</a></li>
+        </ul>
+      </div>
+  
+      <div style="flex: 1 1 200px;">
+        <h3 style="color: #ffc400;">تابعنا</h3>
+        <div style="display: flex; gap: 15px; font-size: 22px; margin-top: 10px;">
+          <a href="#" title="فيسبوك" style="color: #f1f1f1;">📘</a>
+          <a href="#" title="إنستغرام" style="color: #f1f1f1;">📷</a>
+          <a href="#" title="تويتر" style="color: #f1f1f1;">🐦</a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; color: #aaa; font-size: 14px;">
+      جميع الحقوق محفوظة &copy; 2025 مشروعات طلعت مصطفى
+    </div>
+  </footer>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const galleryImages = Array.from(document.querySelectorAll(".gallery img"));
+    const prevBtn = document.querySelector(".lightbox-prev");
+    const nextBtn = document.querySelector(".lightbox-next");
+  
+    let currentIndex = 0;
+  
+    function showImage(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[index].src;
+      lightbox.style.display = "flex";
+    }
+  
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        showImage(index);
+      });
+    });
+  
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showImage(currentIndex);
+    }
+  
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showImage(currentIndex);
+    }
+  
+    nextBtn.addEventListener("click", showNext);
+    prevBtn.addEventListener("click", showPrev);
+  
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === lightboxImg) {
+        lightbox.style.display = "none";
+      }
+    });
+  
+    </script>
+</body>
+</html>

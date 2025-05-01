@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta name="description" content="مجموعة طلعت مصطفى: مشاريع سكنية وتجارية متميزة في مصر.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Noto+Sans+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عقارات مصر</title>
+  
+</head>
+
+<div id="toast" class="toast">مرحبًا بك 👋</div>
+<body class="protected">
+  <a href="https://wa.me/201234567890" target="_blank" style="position:fixed; bottom:90px; left:20px; background-color:#25D366; color:white; padding:15px; border-radius:50%; box-shadow:0 2px 10px rgba(0,0,0,0.3); z-index:999;">
+    📞
+  </a>  
+  <header>
+    <button id="backToTop" style="display:none; position:fixed; bottom:20px; left:20px;">🔝</button>
+  <a href="login.html" id="loginBtn" class="login-btn">تسجيل الدخول</a>
+  <img id="profileIcon" src="img/Sample_User_Icon.png" onclick="window.location.href='profile.html'"  alt="بروفايل" class="profile-icon" title="تسجيل الخروج">      
+   <ul class="navbar">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عن الشركة</a></li>
+        <li><a href="#gallery">المشاريع</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+    </ul>
+  
+    <div class="logo"><img src="img/تنزيل__8_-removebg-preview.png" alt=""></div>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+</header>
+<!-- زر فتح المحادثة -->
+<script>
+  const countDownDate = new Date("May 10, 2025 23:59:59").getTime();
+  const x = setInterval(() => {
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("countdown").innerHTML = `⏳ العرض ينتهي خلال: ${days}ي ${hours}س ${minutes}د ${seconds}ث`;
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "انتهى العرض!";
+    }
+  }, 1000);
+</script>
+
+
+<section class="hero-section"  id="home">
+  <div class="hero-content">
+    <h1 class="responsive-heading" data-text="أهلاً بك في شركة طلعت مصطفي">
+      أهلاً بك في شركة <span class="mobile-break">طلعت مصطفي</span>
+    </h1>
+    <p>
+      مجموعة طلعت مصطفي للعقارات اسم له تاريخ تمتلك شركة <br>
+      طلعت مصطفي العديد من المشاريع ابرزها المشاريع الاتيه
+    </p>
+    <a href="#gallery" class="cta-btn">استكشف مشاريعنا</a>
+  </div>
+  
+</section>
+<section class="facilities" id="facilities">
+    <h2 class="facilities-title">استكشف منشآتنا</h2>
+  
+    <div class="slider-container">
+      <button class="slider-btn prev">&#10094;</button>
+  
+      <div class="slider" id="slider">
+  
+        <a href="madinaty.html" class="facility-card">
+          <img src="img/Madinaty-gate-scaled.jpg" alt="مدينتي">
+          <div class="overlay">
+            <div class="facility-info">
+              <h3>مدينتي</h3>
+              <p>أحد أشهر مشاريع طلعت مصطفى بوحدات سكنية وتجارية وطبية مميزة.</p>
+              <button href="madinaty.html" class="more-btn">عرض المزيد</button>
+            </div>
+          </div>
+        </a>
+      
+        <a href="celia.html" class="facility-card">
+          <img src="img/Celia-villas-2.jpg" alt="سيليا">
+          <div class="overlay">
+            <div class="facility-info">
+              <h3>سيليا</h3>
+              <p>مدينة متكاملة بموقع مميز في العاصمة الإدارية الجديدة ومولات تجارية ضخمة.</p>
+              <button href="celia.html" class="more-btn">عرض المزيد</button>
+            </div>
+          </div>
+        </a>
+      
+        <a href="nour.html" class="facility-card">
+          <img src="img/b15b5b05-534f-4ec7-b793-458d9057e567.jfif" alt="نور">
+          <div class="overlay">
+            <div class="facility-info">
+              <h3>مدينة نور</h3>
+              <p>أول smart city في مصر من مجموعة طلعت مصطفى.</p>
+              <button href="nour.html" class="more-btn">عرض المزيد</button>
+            </div>
+          </div>
+        </a>
+      
+        <a href="privado.html" class="facility-card">
+          <img src="img/99967356-e47e-4416-9285-6903ef0abcfc.jfif" alt="بريڤادو">
+          <div class="overlay">
+            <div class="facility-info">
+              <h3>مدينة بريڤادو</h3>
+              <p>كمبوند داخل مدينتي يحتوي على مرافق سكنية متميزة.</p>
+              <button href="privado.html" class="more-btn">عرض المزيد</button>
+            </div>
+          </div>
+        </a>
+      
+        <a href="southmed.html" class="facility-card">
+          <img src="img/c6d9e19b-b160-4a69-b7e7-793e1768e86f.jfif" alt="ساوث ميد">
+          <div class="overlay">
+            <div class="facility-info">
+              <h3>مدينة ساوث ميد</h3>
+              <p>أرقى المدن السياحية في الساحل الشمالي.</p>
+              <button href="southmed.html" class="more-btn">عرض المزيد</button>
+            </div>
+          </div>
+        </a>
+      
+      </div>
+      
+  
+      <button class="slider-btn next">&#10095;</button>
+    </div>
+  </section>
+  
+  
+  <section class="about-section" id="about">
+    <div class="about-imge">
+      <img src="img/تنزيل__8_-removebg-preview.png" alt="">
+      <span class="circle-spin"></span>
+  </div>
+    <h2 class="section-title"><span>عن</span> الشركة</h2>
+    
+    <div class="about-container">
+      
+      <!-- الصورة -->
+      <div class="about-img">
+        <img src="img/تنزيل (1).jfif" alt="طلعت مصطفى">
+        <h3 class="img-caption">مجموعة طلعت مصطفى القابضة (TMG)</h3>
+      </div>
+  
+      <!-- النص -->
+      <div class="about-text">
+        <h3>من نحن</h3>
+        <p>
+          مجموعة طلعت مصطفى القابضة (TMG) هي تكتل رائد يُركز بشكل خاص على تطوير مجتمعات متكاملة، تشمل على سبيل المثال لا الحصر مشاريع عقارية وفندقية متعددة الاستخدامات في المدن الرئيسية بمصر، بمساحة إجمالية تبلغ 53 مليون متر مربع.
+        </p>
+        <p>
+          تتمتع المجموعة بسجل حافل يمتد لخمسين عامًا في قطاع الإسكان والتطوير العقاري، حيث طورت أكثر من 33 مليون متر مربع من الأراضي وباعت أكثر من 90 ألف وحدة.
+        </p>
+        
+        <h3>رؤيتنا</h3>
+        <p>
+          تتمثل رؤية مجموعة طلعت مصطفى في "تطوير المجتمعات" من خلال إنشاء مدن ومجمعات سكنية مستدامة للطبقتين العليا والمتوسطة. وكانت المجموعة أول من طرح مفهوم المجمعات السكنية المغلقة مثل الربوة والرحاب ومدينتي.
+        </p>
+  
+        <h3>مهمتنا</h3>
+        <p>
+          مهمتنا هي بناء مجتمع حديث شامل، يلبّي تطلعات العملاء لأسلوب حياة فاخر يجمع بين السكن، التسوق، الترفيه، والخدمات، ويساهم في رفع قيمة الاستثمار العقاري وتعزيز ازدهار المجتمعات.
+        </p>
+      </div>
+  
+    </div>
+  </section>
+  
+  <section class="city-section" id="gallery">
+    <h2>مشروعاتنا</h2>
+    <div class="cards">
+      <div class="card">
+        <a href="madinaty-apartments.html">
+        <img src="img/Madinaty-gate-scaled.jpg" alt="مدينتي">
+        <div class="card-content">
+          <h3>مدينتي</h3>
+          <p>مساحات متنوعة تبدأ من 63 م² حتى 204 م²</p>
+          <button>استكشف الآن</button>
+        </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="berefadous-apartments.html">
+        <img src="img/99967356-e47e-4416-9285-6903ef0abcfc.jfif" alt="بريڤادو">
+        <div class="card-content">
+          <h3>بريڤادو</h3>
+          <p>فيلات وشقق فاخرة بتصميمات عصرية</p>
+          <button>استكشف الآن</button>
+        </div>
+      </a>
+      </div>
+      <div class="card">
+        <a href="celia-apartments.html">
+        <img src="img/Celia-villas-2.jpg" alt="سيليا">
+        <div class="card-content">
+          <h3>سيليا</h3>
+          <p>مجتمع سكني فاخر بالعاصمة الإدارية</p>
+          <button>استكشف الآن</button>
+        </div>
+        </a>
+      </div>
+      <div class="card sasa">
+        <a href="nour-apartments.html">
+        <img src="img/b15b5b05-534f-4ec7-b793-458d9057e567.jfif" alt="نور">
+        <div class="card-content">
+          <h3>نور</h3>
+          <p>مدينة ذكية بأحدث تقنيات البناء</p>
+          <button>استكشف الآن</button>
+        </div>
+      </div>
+      <div class="card">
+        <a href="med-apartments.html">
+        <img src="img/99967356-e47e-4416-9285-6903ef0abcfc.jfif" alt="ساوث ميد">
+        <div class="card-content">
+          <h3>ساوث ميد</h3>
+          <p>موقع مميز وخدمات متكاملة</p>
+          <button>استكشف الآن</button>
+        </div>
+      </a>
+      </div>
+    </div>
+  
+</section>
+
+  
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      
+      <!-- الجزء الأيسر (النموذج) -->
+      <div class="contact-form">
+        <h2>تواصل معنا</h2>
+        <form id="whatsappForm"> <!-- أضفنا id هنا -->
+  
+          <label for="fullName">الاسم الكامل</label>
+          <input type="text" id="fullName" placeholder="اكتب اسمك هنا" required>
+  
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" placeholder="+20xxxxxxxxxx" required>
+  
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" id="email" placeholder="email@example.com" required>
+  
+          <label for="city">المدينة المهتم بها</label>
+          <select id="city" required>
+            <option value="">— اختر مدينة —</option>
+            <option value="مدينتي">مدينتي</option>
+            <option value="نور">نور</option>
+            <option value="سيليا">سيليا</option>
+            <option value="بريڤادو">بريڤادو</option>
+          </select>
+  
+          <label for="message">رسالتك</label>
+          <textarea id="message" placeholder="اكتب رسالتك هنا..." rows="5" required></textarea>
+  
+          <button type="submit" class="submit-btn">إرسال عبر واتساب</button>
+  
+        </form>
+      </div>
+  
+      <!-- الجزء الأيمن (الصورة) -->
+      <div class="contact-image">
+        <img src="img/Rectangle-528-1.jpg" alt="صورة مشروع">
+      </div>
+  
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- شعار و نبذة -->
+      <div class="footer-col logo-col">
+        <img src="img/تنزيل__8_-removebg-preview.png" alt="شعار TMG" class="footer-logo">
+        <p>مجموعة طلعت مصطفى هي واحدة من أكبر المؤسسات المتكاملة في مصر والشرق الأوسط، بخبرة تتجاوز 50 عامًا في تطوير المجتمعات العمرانية.</p>
+      </div>
+  
+      <!-- روابط رئيسية -->
+      <div class="footer-col">
+        <h4>مشاريعنا</h4>
+        <ul>
+          <li><a href="madinaty-apartments.html">مدينتي</a></li>
+          <li><a href="nour-apartments.html">نور</a></li>
+          <li><a href="celia-apartments.html">سيليا</a></li>
+          <li><a href="berefadous-apartments.html">بريڤادو</a></li>
+        </ul>
+      </div>
+  
+      <!-- خدمات ومعلومات -->
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">تفاصيل الشركة</a></li>
+          <li><a href="#gallery">مشاريع المدن</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+  
+      <!-- التواصل -->
+      <div class="footer-col">
+        <h4>للتواصل</h4>
+        <p>34 شارع مصدق، الدقي، قسم الدقي، محافظة الجيزة
+        </p>
+        <p>📞 الخط الساخن: <strong>01503335442</strong></p>
+      </div>
+  
+    </div>
+  
+    <!-- الحقوق -->
+    <div class="footer-bottom">
+      <p>© 2025 جميع الحقوق محفوظة لمجموعة طلعت مصطفى.</p>
+    </div>
+  </footer>
+  
+
+<script src="main.js">
+  const sendBtn = document.getElementById('sendMsgBtn');
+  const msgInput = document.getElementById('msgInput');
+  const msgContainer = document.getElementById('msgContainer');
+
+  sendBtn.addEventListener('click', () => {
+    const msg = msgInput.value.trim();
+    if (msg) {
+      const p = document.createElement('p');
+      p.textContent = msg;
+      msgContainer.appendChild(p);
+      msgInput.value = '';
+    }
+  });
+
+</script>
+
+</body>
+</html>

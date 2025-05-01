@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url(img/about-banner-2.jpg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ffc400;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-container button:hover {
+      background-color: #e6a900;
+    }
+
+    .login-container .link {
+      margin-top: 15px;
+    }
+    .toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  font-size: 16px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="toast" class="toast">مرحبًا بك 👋</div>
+
+  <div class="login-container">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button id="loginBtn">دخول</button>
+    <div class="link">
+      <a href="signup.html">إنشاء حساب جديد</a>
+    </div>
+    <p id="errorMessage" class="error-message"></p>
+  </div>
+<script>
+  document.getElementById("loginBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
+      loginOrRegister(user.username); // ✅ استخدم دالة موحدة للتعامل
+      showToast(`مرحبًا بك يا ${user.username} 👋`);
+    } else {
+      document.getElementById('errorMessage').textContent = "اسم المستخدم أو كلمة المرور غير صحيحة!";
+    }
+  });
+
+  function loginOrRegister(username) {
+    localStorage.setItem("currentUser", username);
+    localStorage.setItem("loggedIn", "true");
+
+    const savedName = localStorage.getItem(`displayName_${username}`);
+    const savedImage = localStorage.getItem(`profileImage_${username}`);
+
+    if (savedName) {
+      localStorage.setItem("displayName", savedName);
+    } else {
+      localStorage.setItem("displayName", username);
+    }
+
+    if (savedImage) {
+      localStorage.setItem("profileImage", savedImage);
+    } else {
+      localStorage.removeItem("profileImage");
+    }
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 3000);
+  }
+</script>
+
+
+</body>
+</html>

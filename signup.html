@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Noto+Sans+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <title>إنشاء حساب</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url(img/about-banner-2.jpg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .signup-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .signup-container button:hover {
+      background-color: #218838;
+    }
+
+    .signup-container .link {
+      margin-top: 15px;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>إنشاء حساب جديد</h2>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <button onclick="register()">تسجيل</button>
+    <div class="link">
+      <a href="login.html">العودة لتسجيل الدخول</a>
+    </div>
+    <p id="message" class="message"></p>
+  </div>
+
+  <script>
+    function register() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (!username || !password) {
+        showMessage("يرجى إدخال اسم المستخدم وكلمة المرور!", "error");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const existUser = users.find(u => u.username === username);
+
+      if (existUser) {
+        showMessage("اسم المستخدم موجود بالفعل!", "error");
+      } else {
+        users.push({ username, password });
+        localStorage.setItem('users', JSON.stringify(users));
+        showMessage("تم إنشاء الحساب بنجاح! توجه لتسجيل الدخول.", "success");
+      }
+    }
+    function loginOrRegister(username) {
+  // احفظ اسم المستخدم الحالي
+  localStorage.setItem("currentUser", username);
+  localStorage.setItem("loggedIn", "true");
+
+  // تحقق لو فيه بيانات محفوظة
+  const savedName = localStorage.getItem(`displayName_${username}`);
+  const savedImage = localStorage.getItem(`profileImage_${username}`);
+
+  // لو فيه بيانات قديمة رجعها للعرض
+  if (savedName) {
+    localStorage.setItem("displayName", savedName);
+  } else {
+    localStorage.setItem("displayName", username);
+  }
+
+  if (savedImage) {
+    localStorage.setItem("profileImage", savedImage);
+  } else {
+    localStorage.removeItem("profileImage"); // عشان تبقى الصورة الافتراضية
+  }
+
+  // توجيه للموقع بعد الدخول
+  window.location.href = "index.html";
+}
+
+    function showMessage(msg, type) {
+      const el = document.getElementById('message');
+      el.textContent = msg;
+      el.className = "message " + type;
+    }
+  </script>
+
+</body>
+</html>

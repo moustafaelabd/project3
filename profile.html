@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الملف الشخصي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px 15px;
+      text-align: center;
+    }
+    .profile-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    input[type="file"],
+    input[type="text"] {
+      margin: 10px 0;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffc400;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* ✅ ميديا للموبايل */
+    @media (max-width: 480px) {
+      .profile-card {
+        padding: 20px;
+      }
+      .profile-image {
+        width: 80px;
+        height: 80px;
+      }
+      button {
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <img src="img/Sample_User_Icon.png" id="profilePreview" class="profile-image" alt="صورة المستخدم">
+    <input type="file" id="imageInput" accept="image/*">
+    <label for="imageInput">📷 اختر صورة جديدة</label>
+    <h2 id="displayName" style="margin-bottom: 20px;"></h2>
+    <input type="text" id="usernameInput" placeholder="اسم المستخدم الجديد">
+    <br>
+    <button onclick="saveChanges()">💾 حفظ التغييرات</button>
+    <button onclick="logout()">🚪 تسجيل الخروج</button>
+    <button onclick="window.location.href='index.html'">⬅️ رجوع للرئيسية</button>    
+  </div>
+
+  <script>
+    function saveChanges() {
+  const newName = nameInput.value.trim();
+  const newImage = preview.src;
+
+  if (!newName) {
+    alert("الرجاء إدخال اسم مستخدم.");
+    return;
+  }
+
+  localStorage.setItem(`displayName_${currentUser}`, newName);
+  localStorage.setItem(`profileImage_${currentUser}`, newImage);
+
+  if (confirm("تم حفظ التغييرات! هل تريد الرجوع للصفحة الرئيسية؟")) {
+    window.location.href = "index.html";
+  }
+}
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+      window.location.href = "login.html";
+    }
+
+    const nameInput = document.getElementById("usernameInput");
+    const preview = document.getElementById("profilePreview");
+    const imageInput = document.getElementById("imageInput");
+
+    const savedName = localStorage.getItem(`displayName_${currentUser}`) || currentUser;
+    const savedImage = localStorage.getItem(`profileImage_${currentUser}`);
+
+    nameInput.value = savedName;
+    if (savedImage) {
+      preview.src = savedImage;
+    }
+
+    imageInput.addEventListener("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function saveChanges() {
+      const newName = nameInput.value;
+      const newImage = preview.src;
+
+      localStorage.setItem(`displayName_${currentUser}`, newName);
+      localStorage.setItem(`profileImage_${currentUser}`, newImage);
+
+      if (confirm("تم حفظ التغييرات! هل تريد الرجوع للصفحة الرئيسية؟")) {
+        window.location.href = "index.html";
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("currentUser");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>

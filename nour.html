@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مدينة نور - حدائق العاصمة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Noto+Sans+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      font-family: "Noto Kufi Arabic", sans-serif;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff;
+      font-family: "Noto Kufi Arabic", sans-serif;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('img/noor\ city\ talaat\ mostafa\ new\ capital.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #ffd700;
+      animation: fadeInDown 2s ease;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      border: 4px solid #fff;
+    }
+
+    footer {
+      background-color: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #ffc400;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .hero-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>مدينة نور - حدائق العاصمة</h1>
+  </section>
+
+  <div class="content">
+    <h2>عن مدينة نور</h2>
+    <p>
+      مشروع نور يُعد بمثابة خطوة جديدة فى تطوير منطقة كاملة، وخلق فرص إستثمارية واعدة بها، وبكافة مناطق الجذب المحيطة.
+      حيث سيمثل نموذجًا جديدًا لمدن القرن الحادي والعشرين، التي توفر مستوى جديد من السكن العصري المتكامل، و تعزز الحياة المجتمعية فى بيئة صحية، وتشكل نموذجًا جديدًا للتنمية المستدامة كونها إحدى مدن الجيل الرابع.
+    </p>
+    <p>
+      فستضم المدينة: أحدث التكنولوجيا الجديدة الموجودة في العالم، وستمثل نقلة نوعية فى الفكر التخطيطي من خلال التعاون مع اكبر الشركات والمكاتب العالمية المتخصصة فى تطوير المدن الذكية Smart City.
+    </p>
+    <p>
+      نور مدينة جديدة على غرار المدن التى قامت بتطويرها مجموعة طلعت مصطفى ولكن بفكر أكثر حداثة، مدينة خضراء ذكية تقام على مساحة ٥٠٠٠ فدان. لتكون بمثابة نقلة نوعية فى خارطة التطوير العقارى بمصر.
+    </p>
+
+    <div class="gallery">
+      <img src="img/images (1).jpg" alt="نور 1">
+      <img src="img/noorplace.webp" alt="نور 2">
+      <img src="img/246399-WhatsApp-Image-2021-06-19-at-2.44.57-PM.jpeg" alt="نور 3">
+      <img src="img/مدينة-نور-طلعت-مصطفى.webp" alt="نور 4">
+      <img src="img/مدينة-نور-طلعت-مصطفى (1).webp" alt="نور 4">
+      <img src="img/خدمات-كمبوند-نور-طلعت-مصطفى.webp" alt="نور 4">
+    </div>
+  </div>
+  <a href="index.html#slider" class="back-button">العودة إلى الصفحة الرئيسية</a>
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img src="img/i" id="lightbox-img">
+  </div>
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة لمجموعة طلعت مصطفى
+  </footer>
+
+  <script>
+    const imgs = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+  </script>
+</body>
+</html>
